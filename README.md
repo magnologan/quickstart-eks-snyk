@@ -1,1 +1,1 @@
-# Project README
+# quickstart-eks-snyk
