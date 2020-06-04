@@ -55,14 +55,6 @@ Resources:
       Namespace: snyk-monitor
       Chart: snyk-charts/snyk-monitor
       Name: snyk-monitor
-      Values:
-        server.persistentVolume.storageClass: "gp2"
-        server.statefulSet.enabled: true
-        server.replicaCount: 2
-        server.service.sessionAffinity: ClientIP
-        alertmanager.persistentVolume.storageClass: "gp2"
-        alertmanager.statefulSet.enabled: true
-        alertmanager.replicaCount: 2
 Outputs:
   SnykReleaseName:
     Value: !Ref SnykHelmChart
