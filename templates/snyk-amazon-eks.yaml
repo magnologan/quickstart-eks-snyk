@@ -8,16 +8,50 @@ Parameters:
   KubeConfigKmsContext:
     Type: String
     Default: "EKSQuickStart"
+  KubeClusterName:
+    Type: String
+  SnykIntegrationId:
+    Type: String
+    AllowedPattern: '[a-z0-9-]{36}'
+    MinLength: 1
 Resources:
-  # Install snyk-monitor helm chart
-  SnykHelmChart:
-    Type: "Custom::Helm"
-    Version: "1.0"
+  SnykNamespace:
+    Type: "Custom::KubeManifest"
+    Version: '1.0'
     Properties:
-      ServiceToken: !Ref HelmLambdaArn
+      ServiceToken: !Ref KubeManifestLambdaArn
       KubeConfigPath: !Ref KubeConfigPath
       KubeConfigKmsContext: !Ref KubeConfigKmsContext
-      RepoUrl: https://snyk.github.io/kubernetes-monitor/
+      Manifest:
+        kind: Namespace
+        apiVersion: v1
+        metadata:
+          name: snyk-monitor
+  SnykSecret:
+    Type: "Custom::KubeManifest"
+    DependsOn: SnykNamespace
+    Version: '1.0'
+    Properties:
+      ServiceToken: !Ref KubeManifestLambdaArn
+      KubeConfigPath: !Ref KubeConfigPath
+      KubeConfigKmsContext: !Ref KubeConfigKmsContext
+      Manifest:
+        kind: Secret
+        apiVersion: v1
+        metadata:
+          name: snyk-monitor
+          namespace: snyk-monitor
+        type: Opaque
+        data:
+          dockercfg.json: {}
+          integrationId: !Ref SnykIntegrationId
+  SnykHelmChart:
+    Type: "AWSQS::Kubernetes::Helm"
+    DependsOn: SnykSecret
+    Properties:
+      ClusterID: !Ref KubeClusterName
+      KubeConfigKmsContext: !Ref KubeConfigKmsContext
+      Repository: https://snyk.github.io/kubernetes-monitor/
       Namespace: snyk-monitor
       Chart: snyk-charts/snyk-monitor
       Name: snyk-monitor
