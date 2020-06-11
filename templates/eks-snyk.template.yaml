@@ -48,7 +48,6 @@ Resources:
       Name: snyk-monitor
       Values:
         clusterName: !Ref KubeClusterName
-
 Outputs:
   SnykReleaseName:
     Value: !Ref SnykHelmChart
