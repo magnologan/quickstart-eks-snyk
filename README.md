@@ -135,6 +135,7 @@ For help with choosing an option, see deployment options earlier in this guide.
 | [Deploy into a new VPC and new EKS cluster](https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/create/template?stackName=Amazon-EKS-with-Snyk&templateURL=https://s3.amazonaws.com/aws-quickstart/quickstart-amazon-eks/templates/amazon-eks-master.template.yaml) | [Deploy into a new EKS cluster in an existing VPC](https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/create/template?stackName=Amazon-EKS-with-Snyk&templateURL=https://s3.amazonaws.com/aws-quickstart/quickstart-amazon-eks/templates/amazon-eks-master-existing-vpc.template.yaml) | [Deploy into an existing EKS cluster](https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/create/template?stackName=Snyk-EKS&templateURL=https://s3.amazonaws.com/aws-quickstart/quickstart-eks-snyk/templates/eks-snyk.template.yaml) |
 
 Each new cluster deployments takes about 2 hours to complete. Existing cluster deployments take around 10 minutes.
+
 2.	The template is launched in the Ohio (us-east-2) AWS Region by default. To change the Region choose another Region 
 from list in the upper-right corner of the navigation bar.
 3. On the Create stack page, keep the default setting for the template URL, and then choose Next.
