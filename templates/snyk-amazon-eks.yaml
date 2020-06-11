@@ -1,46 +1,36 @@
 AWSTemplateFormatVersion: "2010-09-09"
 Description: "Deploys the snyk-monitor helm chart into an existing kubernetes cluster (qs-)"
 Parameters:
-  HelmLambdaArn:
-    Type: String
-  KubeConfigPath:
-    Type: String
-  KubeConfigKmsContext:
-    Type: String
-    Default: "EKSQuickStart"
   KubeClusterName:
     Type: String
   SnykIntegrationId:
     Type: String
     AllowedPattern: '[a-z0-9-]{36}'
     MinLength: 1
+  Namespace:
+    Type: String
+    Default: snyk-monitor
 Resources:
   SnykNamespace:
     Type: "Custom::KubeManifest"
-    Version: '1.0'
     Properties:
-      ServiceToken: !Ref KubeManifestLambdaArn
-      KubeConfigPath: !Ref KubeConfigPath
-      KubeConfigKmsContext: !Ref KubeConfigKmsContext
+      ServiceToken: !Sub "arn:${AWS::Partition}:lambda:${AWS::Region}:${AWS::AccountId}:function:EKS-QuickStart-KubeManifest-${KubeClusterName}"
       Manifest:
         kind: Namespace
         apiVersion: v1
         metadata:
-          name: snyk-monitor
+          name: !Ref Namespace
   SnykSecret:
     Type: "Custom::KubeManifest"
     DependsOn: SnykNamespace
-    Version: '1.0'
     Properties:
-      ServiceToken: !Ref KubeManifestLambdaArn
-      KubeConfigPath: !Ref KubeConfigPath
-      KubeConfigKmsContext: !Ref KubeConfigKmsContext
+      ServiceToken: !Sub "arn:${AWS::Partition}:lambda:${AWS::Region}:${AWS::AccountId}:function:EKS-QuickStart-KubeManifest-${KubernetesClusterName}"
       Manifest:
         kind: Secret
         apiVersion: v1
         metadata:
           name: snyk-monitor
-          namespace: snyk-monitor
+          namespace: !Ref Namespace
         type: Opaque
         data:
           dockercfg.json: {}
@@ -50,9 +40,8 @@ Resources:
     DependsOn: SnykSecret
     Properties:
       ClusterID: !Ref KubeClusterName
-      KubeConfigKmsContext: !Ref KubeConfigKmsContext
       Repository: https://snyk.github.io/kubernetes-monitor/
-      Namespace: snyk-monitor
+      Namespace: !Ref Namespace
       Chart: snyk-charts/snyk-monitor
       Name: snyk-monitor
 Outputs:
