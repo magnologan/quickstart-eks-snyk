@@ -15,6 +15,7 @@ Resources:
     Type: "Custom::KubeManifest"
     Properties:
       ServiceToken: !Sub "arn:${AWS::Partition}:lambda:${AWS::Region}:${AWS::AccountId}:function:EKS-QuickStart-KubeManifest-${KubeClusterName}"
+      ClusterName: !Ref KubeClusterName
       Manifest:
         kind: Namespace
         apiVersion: v1
@@ -24,7 +25,8 @@ Resources:
     Type: "Custom::KubeManifest"
     DependsOn: SnykNamespace
     Properties:
-      ServiceToken: !Sub "arn:${AWS::Partition}:lambda:${AWS::Region}:${AWS::AccountId}:function:EKS-QuickStart-KubeManifest-${KubernetesClusterName}"
+      ServiceToken: !Sub "arn:${AWS::Partition}:lambda:${AWS::Region}:${AWS::AccountId}:function:EKS-QuickStart-KubeManifest-${KubeClusterName}"
+      ClusterName: !Ref KubeClusterName
       Manifest:
         kind: Secret
         apiVersion: v1
@@ -33,8 +35,8 @@ Resources:
           namespace: !Ref Namespace
         type: Opaque
         data:
-          dockercfg.json: {}
-          integrationId: !Ref SnykIntegrationId
+          dockercfg.json: !Base64 "{}"
+          integrationId: {'Fn::Base64': !Ref SnykIntegrationId}
   SnykHelmChart:
     Type: "AWSQS::Kubernetes::Helm"
     DependsOn: SnykSecret
@@ -44,6 +46,9 @@ Resources:
       Namespace: !Ref Namespace
       Chart: snyk-charts/snyk-monitor
       Name: snyk-monitor
+      Values:
+        clusterName: !Ref KubeClusterName
+
 Outputs:
   SnykReleaseName:
     Value: !Ref SnykHelmChart
