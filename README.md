@@ -165,21 +165,14 @@ STATUS `Running`.
 
 In the following table, parameters are described for the existing EKS cluster option. For parameters in the other 
 deployment options see the EKS Quick Start documentation: 
-– [Parameters for deploying new VPC and new EKS cluster](https://docs.aws.amazon.com/quickstart/latest/amazon-eks-architecture/step-2.html#option-1-new-vpc)
-– [Parameters for deploying EKS cluster into an existing VPC](https://docs.aws.amazon.com/quickstart/latest/amazon-eks-architecture/step-2.html#option-2-existing-vpc)
+* [Parameters for deploying new VPC and new EKS cluster](https://docs.aws.amazon.com/quickstart/latest/amazon-eks-architecture/step-2.html#option-1-new-vpc)
+* [Parameters for deploying EKS cluster into an existing VPC](https://docs.aws.amazon.com/quickstart/latest/amazon-eks-architecture/step-2.html#option-2-existing-vpc)
 
-<Parameter section name>:
-Parameter label (name)	Default	Description
-Public subnet 2 CIDR
-(PublicSubnet2CIDR)	10.0.144.0/20	CIDR block for the public subnet located in Availability Zone 2.
-Permitted IP range
-(AccessCIDR)	Requires input	Enter the CIDR IP range that is permitted to access Snyk. We recommend that you set this value to a trusted IP range. For example, you might want to grant only your corporate network access to the software. 
-<Parameter section name>:
-Parameter label (name)	Default	Description
-Key pair name
-(KeyPairName)	Requires input	Enter the public/private key pair you created in your preferred AWS Region; see the Technical requirements section.
-Parameter label
-(ParameterName)	Optional	<Example of optional parameter.>
+| Parameter label (name) | Default | Description |
+| --- | --- | --- |
+| EKS cluster name(KubeClusterName) | *Requires input* | Name of the EKS cluster to deploy snyk into. |
+| Snyk integration ID(SnykIntegrationId) | *Requires input* | Snyk kubernetes integration ID. Must be obtained from the Snyk console. For more information see *Step 3. Retrieve Snyk Kubernetes integration ID* in this guide. |
+| Namespace(Namespace) | snyk-monitor | Kubernetes namespace to deploy the Snyk controller into. |
 
 ### Best practices for using Snyk on AWS
 The Snyk Kubernetes integration will monitor workloads and provide details on potential vulnerabilities in container 
