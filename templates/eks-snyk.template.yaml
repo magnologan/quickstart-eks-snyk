@@ -1,5 +1,5 @@
 AWSTemplateFormatVersion: "2010-09-09"
-Description: "Deploys the snyk-monitor helm chart into an existing kubernetes cluster (qs-)"
+Description: "Deploys the snyk-monitor helm chart into an existing kubernetes cluster (qs-1qqod7mii)"
 Metadata:
   AWS::CloudFormation::Interface:
     ParameterGroups:
@@ -24,7 +24,7 @@ Parameters:
     Type: String
     AllowedPattern: '[a-z0-9-]{36}'
     MinLength: 36
-    Description: Snyk kubernetes integration ID. Must be obtained from the Snyk console. For more information see https://support.snyk.io/hc/en-us/articles/360003916158-Install-the-Snyk-controller-with-Helm .
+    Description: 'Snyk kubernetes integration ID. Must be obtained from the Snyk console. For more information see https://support.snyk.io/hc/en-us/articles/360003916158-Install-the-Snyk-controller-with-Helm .'
   Namespace:
     Type: String
     Default: snyk-monitor
