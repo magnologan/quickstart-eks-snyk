@@ -1,0 +1,17 @@
+:quickstart-project-name: quickstart-eks-snyk
+:partner-product-name: Snyk controller for Amazon EKS
+:custom_title:
+:partner-product-short-name: Snyk controller
+:partner-company-name: Snyk
+:doc-month: October
+:doc-year: 2020
+:partner-contributors: Jay Yeras - {partner-company-name}
+:quickstart-contributors: Jay McConnell - AWS Global Partner SA, AWS
+:default_deployment_region: us-east-2
+:eks_addin:
+:disable_regions:
+// Uncomment these two attributes if you are leveraging
+// - an AWS Marketplace listing.
+// Additional content will be auto-generated based on these attributes.
+// :marketplace_subscription:
+// :marketplace_listing_url: https://example.com/
