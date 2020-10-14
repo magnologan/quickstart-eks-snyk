@@ -33,27 +33,26 @@ Parameters:
     Description: '[Optional] Kubernetes namespace to deploy the Snyk controller into.'
 Resources:
   SnykNamespace:
-    Type: "Custom::KubeManifest"
+    Type: "AWSQS::Kubernetes::Resource"
     Properties:
-      ServiceToken: !Sub "arn:${AWS::Partition}:lambda:${AWS::Region}:${AWS::AccountId}:function:EKS-QuickStart-KubeManifest-${KubeClusterName}"
       ClusterName: !Ref KubeClusterName
-      Manifest:
+      Namespace: default
+      Manifest: |
         kind: Namespace
         apiVersion: v1
         metadata:
           name: !Ref Namespace
   SnykSecret:
-    Type: "Custom::KubeManifest"
+    Type: "AWSQS::Kubernetes::Resource"
     DependsOn: SnykNamespace
     Properties:
-      ServiceToken: !Sub "arn:${AWS::Partition}:lambda:${AWS::Region}:${AWS::AccountId}:function:EKS-QuickStart-KubeManifest-${KubeClusterName}"
       ClusterName: !Ref KubeClusterName
-      Manifest:
+      Namespace: !Ref Namespace
+      Manifest: |
         kind: Secret
         apiVersion: v1
         metadata:
           name: snyk-monitor
-          namespace: !Ref Namespace
         type: Opaque
         data:
           dockercfg.json: !Base64 "{}"
