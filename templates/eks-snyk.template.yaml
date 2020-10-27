@@ -48,15 +48,18 @@ Resources:
     Properties:
       ClusterName: !Ref KubeClusterName
       Namespace: !Ref Namespace
-      Manifest: |
-        kind: Secret
-        apiVersion: v1
-        metadata:
-          name: snyk-monitor
-        type: Opaque
-        data:
-          dockercfg.json: !Base64 "{}"
-          integrationId: {'Fn::Base64': !Ref SnykIntegrationId}
+      Manifest: !Sub
+        - |
+          kind: Secret
+          apiVersion: v1
+          metadata:
+            name: snyk-monitor
+          type: Opaque
+          data:
+            dockercfg.json: ${DockerCfg}
+            integrationId: ${IntegrationId}
+        - DockerCfg: !Base64 "{}"
+          IntegrationId: {'Fn::Base64': !Ref SnykIntegrationId}
   SnykHelmChart:
     Type: "AWSQS::Kubernetes::Helm"
     DependsOn: SnykSecret
@@ -70,4 +73,4 @@ Resources:
         clusterName: !Ref KubeClusterName
 Outputs:
   SnykReleaseName:
-    Value: !Ref SnykHelmChart
+    Value: !GetAtt SnykHelmChart.Name
