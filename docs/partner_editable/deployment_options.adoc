@@ -8,4 +8,4 @@
 ^|https://fwd.aws/mbD5g[View template^]
 ^|https://fwd.aws/znAVA[View template^]
 |===
-New cluster deployments can take up to 90 minutes to complete. Existing cluster deployments take around 10 minutes.
+New cluster deployments take about 1.5 hours to complete. Existing cluster deployments take about 10 minutes.

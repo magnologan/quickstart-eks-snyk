@@ -21,16 +21,16 @@ Metadata:
 Parameters:
   KubeClusterName:
     Type: String
-    Description: Name of the EKS cluster to deploy snyk into.
+    Description: Name of the EKS cluster to deploy Snyk into.
   SnykIntegrationId:
     Type: String
     AllowedPattern: '[a-z0-9-]{36}'
     MinLength: 36
-    Description: 'Snyk kubernetes integration ID. Must be obtained from the Snyk console. For more information see https://support.snyk.io/hc/en-us/articles/360003916158-Install-the-Snyk-controller-with-Helm .'
+    Description: 'Snyk Kubernetes integration ID. This must be obtained from the Snyk console. For more information, see https://support.snyk.io/hc/en-us/articles/360003916158-Install-the-Snyk-controller-with-Helm .'
   Namespace:
     Type: String
     Default: snyk-monitor
-    Description: '[Optional] Kubernetes namespace to deploy the Snyk controller into.'
+    Description: '(Optional) Kubernetes namespace to deploy the Snyk controller into.'
 Resources:
   SnykNamespace:
     Type: "AWSQS::Kubernetes::Resource"
