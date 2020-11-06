@@ -2,6 +2,3 @@
 * A Kubernetes namespace for Snyk.
 * A Kubernetes secret that contains a Snyk Integration ID and docker config JSON file.
 * A Snyk monitor pod.
-
-//TODO This list should capture everything in the diagram. It's currently missing most of the items I see in the diagram.
-
