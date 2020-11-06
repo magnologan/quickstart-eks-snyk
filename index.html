@@ -796,7 +796,7 @@ p.footer-text a{color:#d7d8d8}
 <ul class="sectlevel2">
 <li><a href="#_specialized_knowledge">Specialized knowledge</a></li>
 <li><a href="#_aws_account">AWS account</a></li>
-<li><a href="#_eks_cluster">EKS cluster</a></li>
+<li><a href="#_amazon_eks_cluster">Amazon EKS cluster</a></li>
 <li><a href="#_iam_permissions">IAM permissions</a></li>
 <li><a href="#_deployment_options">Deployment options</a></li>
 </ul>
@@ -816,8 +816,8 @@ p.footer-text a{color:#d7d8d8}
 <li><a href="#_troubleshooting">Troubleshooting</a></li>
 <li><a href="#_parameter_reference">Parameter reference</a>
 <ul class="sectlevel2">
-<li><a href="#_deploy_into_a_new_vpc_and_new_eks_cluster">Deploy into a new VPC and new EKS cluster</a></li>
-<li><a href="#_deploy_into_a_new_eks_cluster_in_an_existing_vpc">Deploy into a new EKS cluster in an existing VPC</a></li>
+<li><a href="#_deploy_into_a_new_vpc_and_new_amazon_eks_cluster">Deploy into a new VPC and new Amazon EKS cluster</a></li>
+<li><a href="#_deploy_into_a_new_amazon_eks_cluster_in_an_existing_vpc">Deploy into a new Amazon EKS cluster in an existing VPC</a></li>
 <li><a href="#_launch_into_an_existing_eks_cluster">Launch into an existing EKS cluster</a></li>
 </ul>
 </li>
@@ -831,7 +831,7 @@ p.footer-text a{color:#d7d8d8}
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
-<h2 id="_snyk_controller_for_amazon_eks" class="discrete text-center">Snyk controller for Amazon EKS</h2>
+<h2 id="_snyk_controller_for_amazon_eks" class="discrete text-center">Snyk Controller for Amazon EKS</h2>
 <h2 id="_quick_start_reference_deployment" class="discrete text-left text-center">Quick Start Reference Deployment</h2>
 <div class="imageblock text-center">
 <div class="content">
@@ -840,8 +840,8 @@ p.footer-text a{color:#d7d8d8}
 </div>
 <div class="paragraph text-center">
 <p><strong>October 2020</strong><br>
-<em>Jay Yeras - Snyk</em><br>
-<em>Jay McConnell - AWS Global Partner SA, AWS</em></p>
+<em>Jay Yeras, Snyk</em><br>
+<em>Jay McConnell, AWS Quick Start team</em></p>
 </div>
 <div class="admonitionblock tip text-left">
 <table>
@@ -850,7 +850,7 @@ p.footer-text a{color:#d7d8d8}
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Visit our <a href="https://github.com/aws-quickstart/quickstart-eks-snyk" target="_blank" rel="noopener">GitHub repository</a> for source files and to post feedback,
+Visit the <a href="https://github.com/aws-quickstart/quickstart-eks-snyk" target="_blank" rel="noopener">GitHub repository</a> for source files and to post feedback,
 report bugs, or submit feature ideas for this Quick Start.
 </td>
 </tr>
@@ -865,10 +865,10 @@ report bugs, or submit feature ideas for this Quick Start.
 <h2 id="_overview">Overview</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Snyk controller for Amazon EKS enables you to import and test your running EKS workloads and identify vulnerabilities in their associated images and configurations that might make those workloads less secure. Once imported, Snyk continues to monitor those workloads, identifying additional security issues as new images are deployed and the workload configuration changes.</p>
+<p>Snyk controller for Amazon Elastic Kubernetes Service (Amazon EKS) lets you import and test your running EKS workloads to identify vulnerabilities in associated images and configurations that might make workloads less secure. As new images are deployed and workload configurations change, Snyk continually monitors workloads to identify security issues.</p>
 </div>
 <div class="paragraph">
-<p>This Quick Start is for developers, devops, security teams, or any role within an organization building, deploying and maintaining applications on Amazon EKS.</p>
+<p>This Quick Start is for developers, DevOps, security teams, and roles within an organization for building, deploying, and maintaining Amazon EKS applications.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -888,7 +888,7 @@ Amazon may share user-deployment information with the AWS Partner that collabora
 <h2 id="_software_licenses">Software licenses</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This Quick Start requires a license for Snyk, the license costs and the instructions to obtain a license are available on <a href="https://aws.amazon.com/marketplace/pp/B085VGM85Q?qid=1590170928622&amp;sr=0-1&amp;ref_=srh_res_product_title" target="_blank" rel="noopener">Snyk&#8217;s AWS marketplace page</a>.</p>
+<p>This Quick Start requires a Snyk license. For more information, see <a href="https://aws.amazon.com/marketplace/pp/B085VGM85Q?qid=1590170928622&amp;sr=0-1&amp;ref_=srh_res_product_title" target="_blank" rel="noopener">Snyk&#8217;s AWS Marketplace page</a>.</p>
 </div>
 </div>
 </div>
@@ -896,27 +896,27 @@ Amazon may share user-deployment information with the AWS Partner that collabora
 <h2 id="_architecture">Architecture</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Deploying this Quick Start with default parameters into an existing Amazon EKS cluster builds the following environment. For a diagram of the new VPC and new EKS cluster deployment options, see the <a href="https://docs.aws.amazon.com/quickstart/latest/amazon-eks-architecture/architecture.html">Amazon EKS Quick Start documentation</a>.</p>
+<p>Deploying this Quick Start with default parameters into an existing Amazon EKS cluster builds the following environment. For a diagram of the new VPC and Amazon EKS cluster, see the <a href="https://aws-quickstart.github.io/quickstart-amazon-eks/" target="_blank" rel="noopener">Amazon EKS on the AWS Cloud</a>.</p>
 </div>
 <div id="architecture1" class="imageblock">
 <div class="content">
 <a class="image" href="images/architecture_diagram.png"><img src="images/architecture_diagram.png" alt="Architecture"></a>
 </div>
-<div class="title">Figure 1. Quick Start architecture for <em>Snyk controller for Amazon EKS</em></div>
+<div class="title">Figure 1. Quick Start architecture for <em>Snyk Controller for Amazon EKS</em></div>
 </div>
 <div class="paragraph">
-<p>As shown in Figure 1, the Quick Start sets up the following:</p>
+<p>As shown in figure 1, the Quick Start sets up the following:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Kubernetes namespace for Snyk</p>
+<p>A Kubernetes namespace for Snyk.</p>
 </li>
 <li>
-<p>Kubernetes secret containing Skyk integration ID and docker config json.</p>
+<p>A Kubernetes secret that contains a Snyk Integration ID and docker config JSON file.</p>
 </li>
 <li>
-<p>Snyk monitor pod</p>
+<p>A Snyk monitor pod.</p>
 </li>
 </ul>
 </div>
@@ -929,30 +929,27 @@ Amazon may share user-deployment information with the AWS Partner that collabora
 <h3 id="_specialized_knowledge">Specialized knowledge</h3>
 <div class="paragraph">
 <p>This deployment guide requires a moderate level of familiarity with
-AWS services. If you’re new to AWS, visit the
-<a href="https://aws.amazon.com/getting-started/" target="_blank" rel="noopener">Getting Started Resource Center</a>
-and the <a href="https://aws.amazon.com/training/">AWS Training and Certification
-website</a>. These sites provide materials for learning how to design,
-deploy, and operate your infrastructure and applications on the AWS
-Cloud.</p>
+AWS services. If you’re new to AWS, see the <a href="https://aws.amazon.com/getting-started/" target="_blank" rel="noopener">Getting Started Resource Center</a>
+and <a href="https://aws.amazon.com/training/">AWS Training and Certification</a>. These sites provide materials for learning how to design,
+deploy, and operate your infrastructure and applications on the AWS Cloud.</p>
 </div>
 <div class="paragraph">
-<p>This Quick Start assumes familiarity with Amazon EKS, AWS CloudFormation and Kubernetes.</p>
+<p>This Quick Start assumes familiarity with Amazon EKS, AWS CloudFormation, and Kubernetes.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_aws_account">AWS account</h3>
 <div class="paragraph">
-<p>If you don’t already have an AWS account, create one at <a href="https://aws.amazon.com/" target="_blank" rel="noopener">https://aws.amazon.com</a> by following the on-screen instructions. Part of the sign-up process involves receiving a phone call and entering a PIN using the phone keypad.</p>
+<p>If you don’t already have an AWS account, create one at <a href="https://aws.amazon.com/" target="_blank" rel="noopener">https://aws.amazon.com</a> by following the on-screen instructions. Part of the sign-up process involves receiving a phone call and entering a PIN using your phone&#8217;s keypad.</p>
 </div>
 <div class="paragraph">
 <p>Your AWS account is automatically signed up for all AWS services. You are charged only for the services you use.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_eks_cluster">EKS cluster</h3>
+<h3 id="_amazon_eks_cluster">Amazon EKS cluster</h3>
 <div class="paragraph">
-<p>If you are deploying onto an existing EKS cluster that was not created by the Amazon EKS Quick Start, you will need to configure the cluster to allow this Quick Start to manage your EKS cluster. The requirements are detailed in Step 2 of the Deployment steps section of this document.</p>
+<p>If you deploy your cluster into an existing Amazon EKS cluster that was not created by the <a href="https://aws-quickstart.github.io/quickstart-amazon-eks/">Amazon EKS on the AWS Cloud</a> Quick Start, you must configure your cluster to allow this Quick Start to manage it. For more information, see the <a href="#_deployment_steps">Deployment steps</a> section.</p>
 </div>
 </div>
 <div class="sect2">
@@ -967,7 +964,7 @@ Cloud.</p>
 <div class="sect2">
 <h3 id="_deployment_options">Deployment options</h3>
 <div class="paragraph">
-<p>This Quick Start provides two deployment options:</p>
+<p>This Quick Start provides three deployment options:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -975,10 +972,10 @@ Cloud.</p>
 <p><strong>Deploy Snyk controller into a new VPC (end-to-end deployment)</strong>. This option builds a new AWS environment consisting of the VPC, subnets, NAT gateways, security groups, bastion hosts, EKS cluster, a node group, and other infrastructure components. It then deploys Snyk controller into this new EKS cluster.</p>
 </li>
 <li>
-<p><strong>Deploy Snyk controller into a new EKS cluster in an existing VPC</strong>. This option builds a new AWS EKS cluster, a node group, and other infrastructure components into an existing VPC. It then deploys Snyk controller into this new EKS cluster.</p>
+<p><strong>Deploy Snyk controller into a new EKS cluster of an existing VPC</strong>. This option builds a new Amazon EKS cluster, node group, and other infrastructure components into an existing VPC. It then deploys Snyk controller into this new EKS cluster.</p>
 </li>
 <li>
-<p><strong>Deploy Snyk controller into an existing EKS cluster</strong>. This option provisions Snyk controller in your existing AWS infrastructure. Note that when deploying into an EKS cluster that was not created by the Amazon EKS Quick Start there you must prepare the cluster as described in Step 2 of the Deployment Steps section of this guide.</p>
+<p><strong>Deploy Snyk controller into an existing EKS cluster</strong>. This option provisions Snyk controller in your existing AWS infrastructure. Note that when deploying into an EKS cluster that was not created by the <a href="https://aws-quickstart.github.io/quickstart-amazon-eks/">Amazon EKS on the AWS Cloud</a> Quick Start, you must prepare the cluster as described in the <a href="#_deployment_steps">Deployment steps</a> section.</p>
 </li>
 </ul>
 </div>
@@ -993,10 +990,10 @@ Cloud.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Sign in to your AWS account at <a href="https://aws.amazon.com" class="bare">https://aws.amazon.com</a> with an IAM user role that has the necessary permissions. For details, see <a href="#_planning_the_deployment">Planning the deployment</a> earlier in this guide.</p>
+<p>Sign in to your AWS account at <a href="https://aws.amazon.com" class="bare">https://aws.amazon.com</a> with an IAM user role that has the necessary permissions. For details, see <a href="#_planning_the_deployment">Planning the deployment</a>, earlier in this guide.</p>
 </li>
 <li>
-<p>Make sure that your AWS account is configured correctly, as discussed in the <a href="#_technical_requirements">Technical requirements</a> section.</p>
+<p>Ensure that your AWS account is configured correctly, as discussed in the <a href="#_technical_requirements">Technical requirements</a> section.</p>
 </li>
 </ol>
 </div>
@@ -1010,7 +1007,7 @@ Cloud.</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-This step is only required if you are launching this Quick Start into an existing EKS cluster that was not created using the Amazon EKS Quick Start. If you would like to create a new EKS cluster with your deployment, skip to step 3.
+This step is only required if you launch this Quick Start into an existing Amazon EKS cluster that was not created using the <a href="https://aws-quickstart.github.io/quickstart-amazon-eks/">Amazon EKS on the AWS Cloud</a> deployment. If you want to create a new EKS cluster with your deployment, skip to step 3.
 </td>
 </tr>
 </table>
@@ -1021,31 +1018,31 @@ This step is only required if you are launching this Quick Start into an existin
 <p>Sign in to your AWS account, and launch the <a href="https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/create/template?stackName=Amazon-EKS&amp;templateURL=https://aws-quickstart.s3.us-east-1.amazonaws.com/quickstart-amazon-eks/templates/amazon-eks-entrypoint-existing-cluster.template.yaml">cluster preparation template</a>.</p>
 </li>
 <li>
-<p>The template is launched in the Ohio (us-east-2) AWS Region by default. To change the Region choose another Region from list in the upper-right corner of the navigation bar.</p>
+<p>The template launches in the US East (Ohio) Region by default. To change the Region, choose another Region from list in the upper-right corner of the navigation bar.</p>
 </li>
 <li>
-<p>On the Create stack page, keep the default setting for the template URL, and then choose Next.</p>
+<p>On the <strong>Create stack</strong> page, keep the default setting for the template URL, and then choose <strong>Next</strong>.</p>
 </li>
 <li>
-<p>On the Specify stack details page, change the stack name if needed. Enter the name of the EKS cluster you would like to deploy to, as well as the Subnet ID&#8217;s and security group ID associated with the cluster. These can be obtained from the EKS Cluster console.</p>
+<p>On the <strong>Specify stack details</strong> page, change the stack name if needed. Enter the name of the Amazon EKS cluster you want to deploy to as well as the subnet IDs and security group ID associated with the cluster. These can be obtained from the EKS cluster console.</p>
 </li>
 <li>
-<p>On the options page, you can specify tags (key-value pairs) for resources in your stack and set advanced options. When you’re done, choose Next.</p>
+<p>On the <strong>Options</strong> page, specify the key-value pairs for resources in your stack, and set advanced options. When you’re done, choose <strong>Next</strong>.</p>
 </li>
 <li>
-<p>On the Review page, review and confirm the template settings. Under Capabilities, select the two check boxes to acknowledge that the template creates IAM resources and might require the ability to automatically expand macros.</p>
+<p>On the <strong>Review</strong> page, review and confirm your template settings. Under <strong>Capabilities</strong>, select the two check boxes to acknowledge that the template creates IAM resources and might require the ability to automatically expand macros.</p>
 </li>
 <li>
-<p>Choose Create stack to deploy the stack.</p>
+<p>Choose <strong>Create stack</strong> to deploy the stack.</p>
 </li>
 <li>
-<p>Monitor the status of the stack until the status reaches CREATE_COMPLETE.</p>
+<p>Monitor the stack&#8217;s status until it is <strong>CREATE_COMPLETE</strong>.</p>
 </li>
 <li>
-<p>From the Outputs section of the stack, note the KubernetesRoleArn and the HelmRoleArn.</p>
+<p>From the <strong>Outputs</strong> section of the stack, note the <code>KubernetesRoleArn</code> and <code>HelmRoleArn</code> roles.</p>
 </li>
 <li>
-<p>Add the roles to the aws-auth config map in your cluster, specifying system:masters for the groups, by following the steps in the <a href="https://docs.aws.amazon.com/eks/latest/userguide/add-user-role.html">EKS documentation</a>. This allows the Quick Start to manage your cluster via AWS CloudFormation.</p>
+<p>Add the roles to the <code>aws-auth config</code> map in your cluster, specifying <code>system:masters</code> for the groups. This allows the Quick Start to manage your cluster via AWS CloudFormation. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/add-user-role.html" target="_blank" rel="noopener">Managing users or IAM roles for your cluster</a>.</p>
 </li>
 </ol>
 </div>
@@ -1068,13 +1065,13 @@ Region</code>, and <code>Quick Start S3 key prefix</code>. Changing these parame
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Now, log in to your Snyk account and navigate to Integrations.</p>
+<p>Log in to your Snyk account, and navigate to <strong>Integrations</strong>.</p>
 </li>
 <li>
-<p>Search for and click Kubernetes.</p>
+<p>Find <strong>Kubernetes</strong>, and choose it.</p>
 </li>
 <li>
-<p>Click Connect from the page that loads, copy the Integration ID. The Snyk Integration ID is a UUID, similar to this format: abcd1234-abcd-1234-abcd-1234abcd1234. Save it for use in the next step.</p>
+<p>Choose <strong>Connect</strong> from the page, and copy the Snyk Integration ID. The Integration ID is a UUID with a format that&#8217;s similar to the following: abcd1234-abcd-1234-abcd-1234abcd1234. Save the UUID for the next step.</p>
 </li>
 </ol>
 </div>
@@ -1096,7 +1093,7 @@ You are responsible for the cost of the AWS services used while running this Qui
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Sign in to your AWS account, and choose one of the following options to launch the AWS CloudFormation template. For help with choosing an option, see <a href="#_deployment_options">deployment options</a> earlier in this guide.</p>
+<p>Sign in to your AWS account, and choose one of the following options to launch the AWS CloudFormation template. For help with choosing an option, see the <a href="#_deployment_options">Deployment options</a> section, earlier in this guide.</p>
 </li>
 </ol>
 </div>
@@ -1108,9 +1105,9 @@ You are responsible for the cost of the AWS services used while running this Qui
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://fwd.aws/6MkEA" target="_blank" rel="noopener">Deploy into a new VPC and new EKS cluster</a></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://fwd.aws/Ewmdr" target="_blank" rel="noopener">Deploy into a new EKS cluster in an existing VPC</a></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://fwd.aws/ENbVj" target="_blank" rel="noopener">Deploy into an existing EKS cluster</a></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://fwd.aws/6MkEA" target="_blank" rel="noopener">Deploy into a new VPC and new Amazon EKS cluster</a></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://fwd.aws/Ewmdr" target="_blank" rel="noopener">Deploy into a new Amazon EKS cluster in an existing VPC</a></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://fwd.aws/ENbVj" target="_blank" rel="noopener">Deploy into an existing Amazon EKS cluster</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://fwd.aws/DgqPB" target="_blank" rel="noopener">View template</a></p></td>
@@ -1120,7 +1117,7 @@ You are responsible for the cost of the AWS services used while running this Qui
 </tbody>
 </table>
 <div class="paragraph">
-<p>New cluster deployments can take up to 90 minutes to complete. Existing cluster deployments take around 10 minutes.</p>
+<p>New cluster deployments take about 90 minutes to complete. Existing-cluster deployments take about 10 minutes to complete.</p>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -1129,7 +1126,7 @@ You are responsible for the cost of the AWS services used while running this Qui
 <i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-If you’re deploying Snyk controller into an existing VPC, make sure that any private subnets have <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html" target="_blank" rel="noopener">NAT gateways</a> in their route tables, to allow the Quick Start to download packages and software. Also, make sure that the domain name option in the DHCP options is configured as explained in the <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html" target="_blank" rel="noopener">Amazon VPC documentation</a>.
+If you deploy Snyk controller into an existing VPC, ensure that any private subnets have <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html" target="_blank" rel="noopener">NAT gateways</a> in their route tables to allow the Quick Start to download packages and software. Also, ensure that the domain name in the DHCP options is configured. For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html" target="_blank" rel="noopener">DHCP options sets</a>.
 </td>
 </tr>
 </table>
@@ -1137,16 +1134,17 @@ If you’re deploying Snyk controller into an existing VPC, make sure that any p
 <div class="olist arabic">
 <ol class="arabic" start="2">
 <li>
-<p>Check the AWS Region that’s displayed in the upper-right corner of the navigation bar, and change it if necessary. This is where the network infrastructure for Snyk controller will be built. The template is launched in the us-east-2 Region by default.</p>
+<p>Check the AWS Region that’s displayed in the upper-right corner of the navigation bar, and change it if necessary. This is where the network infrastructure for Snyk controller is built. The template launches in the us-east-2 Region by default.</p>
 </li>
 <li>
 <p>On the <strong>Create stack</strong> page, keep the default setting for the template URL, and then choose <strong>Next</strong>.</p>
 </li>
 <li>
-<p>On the <strong>Specify stack details</strong> page, change the stack name if needed. Review the parameters for the template, a reference is provided in the <a href="#_parameter_reference">Parameter reference</a> section of this document.. Provide values for the parameters that require input. For all other parameters, review the default settings and customize them as necessary.</p>
+<p>On the <strong>Specify stack details</strong> page, change the stack name if needed. Review the parameters for the template. A reference
+is provided in the <a href="#_parameter_reference">Parameter reference</a> section. Provide values for the parameters that require input. For all other parameters, review the default settings, and customize them as necessary.</p>
 </li>
 <li>
-<p>On the options page, you can <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html" target="_blank" rel="noopener">specify tags</a> (key-value pairs) for resources in your stack and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-add-tags.html" target="_blank" rel="noopener">set advanced options</a>. When you’re done, choose <strong>Next</strong>.</p>
+<p>On the <strong>Options</strong> page, specify the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html" target="_blank" rel="noopener">key-value pairs</a> for resources in your stack, and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-add-tags.html" target="_blank" rel="noopener">set advanced options</a>. When you’re done, choose <strong>Next</strong>.</p>
 </li>
 <li>
 <p>On the <strong>Review</strong> page, review and confirm the template settings. Under <strong>Capabilities</strong>, select the two check boxes to acknowledge that the template creates IAM resources and might require the ability to automatically expand macros.</p>
@@ -1177,16 +1175,16 @@ If you’re deploying Snyk controller into an existing VPC, make sure that any p
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Configure kubectll command line utility to connect to your EKS cluster, as per the <a href="https://docs.aws.amazon.com/eks/latest/userguide/managing-auth.html">EKS documentation</a>.</p>
+<p>Configure the <code>kubectll</code> command line utility to connect to your EKS cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managing-auth.html" target="_blank" rel="noopener">Cluster authentication</a>.</p>
 </li>
 <li>
-<p>Run kubectl get namespaces and verify that a namespace snyk-monitor displays with STATUS Active.</p>
+<p>Run <code>kubectl</code> to get namespaces, and verify that <strong>snyk-monitor</strong> namespace has a status of <strong>Active</strong>.</p>
 </li>
 <li>
-<p>Run kubectl get pods --namespace snyk-monitor and verify that a pod with the prefix snyk-monitor displays with STATUS Running.</p>
+<p>Run <code>kubectl get pods --namespace snyk-monitor</code>, and verify that a pod with the <strong>snyk-monitor</strong> prefix has a status of <strong>Running</strong>.</p>
 </li>
 <li>
-<p>From the Snyk console, verify that your cluster appears and you are able to add workloads as described in the <a href="https://support.snyk.io/hc/en-us/articles/360003947117#UUID-a0526554-0943-3363-6977-7a11f766ede2">Snyk documentation</a>.</p>
+<p>From the Snyk console, verify that your cluster appears and that you can add workloads. For more information, see <a href="https://support.snyk.io/hc/en-us/articles/360003947117#UUID-a0526554-0943-3363-6977-7a11f766ede2" target="_blank" rel="noopener">Adding Kubernetes workloads for security scanning</a>.</p>
 </li>
 </ol>
 </div>
@@ -1196,7 +1194,7 @@ If you’re deploying Snyk controller into an existing VPC, make sure that any p
 <h2 id="_best_practices_for_using_snyk_controller_on_eks">Best practices for using Snyk controller on EKS</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The Snyk Kubernetes integration will monitor workloads and provide details on potential vulnerabilities in container images as well as security configuration for your deployments. It is recommended that Kubernetes manifests adhere to the workload configuration properties defined in the <a href="https://support.snyk.io/hc/en-us/articles/360003916178-Viewing-project-details-and-test-results">Snyk documentation</a>.</p>
+<p>The Snyk Kubernetes integration monitors workloads and provides details about potential vulnerabilities in container images as well as security configuration for your deployments. We recommended that your Kubernetes manifests adhere to the workload configuration properties. For more information, see <a href="https://support.snyk.io/hc/en-us/articles/360003916178-Viewing-project-details-and-test-results" target="_blank" rel="noopener">Viewing project details and test results</a>.</p>
 </div>
 </div>
 </div>
@@ -1204,7 +1202,10 @@ If you’re deploying Snyk controller into an existing VPC, make sure that any p
 <h2 id="_security">Security</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Snyk will alert for common misconfigurations include not setting CPU/Memory limits for your application as well as running containers as the root user. Another common misconfiguration is leaving the default file system mounted for the container as writable. This may lead to a potential exposure for an attacker who compromises the container and writes to the disk, which makes certain kinds of attacks easier. If your containers are stateless then you don’t need a writable filesystem. Lastly, not defining capabilities. At a low-level, Linux capabilities control what different processes in the container are allowed to do: from being able to write to the disk, to being able to communicate over the network.</p>
+<p>Snyk alerts for common misconfigurations include not setting CPU or memory limits for your application as well as running containers as the root user. Another common misconfiguration is leaving the mounted default file system for the container as writable. This may expose you to attackers who compromise the container by writing to the disk. If your containers are stateless, you don’t need a writable file system.</p>
+</div>
+<div class="paragraph">
+<p>Also, ensure to define capabilities. At a low level, Linux capabilities control what processes in the container can do, from writing to the disk to communicating over the network.</p>
 </div>
 </div>
 </div>
@@ -1215,7 +1216,7 @@ If you’re deploying Snyk controller into an existing VPC, make sure that any p
 <p><strong>Q.</strong> I encountered a <strong>CREATE_FAILED</strong> error when I launched the Quick Start.</p>
 </div>
 <div class="paragraph">
-<p><strong>A.</strong> If AWS CloudFormation fails to create the stack, we recommend that you relaunch the template with <strong>Rollback on failure</strong> set to <strong>Disabled</strong>. (This setting is under <strong>Advanced</strong> in the AWS CloudFormation console, <strong>Options</strong> page.) With this setting, the stack’s state is retained and the workload is left running, so you can troubleshoot the issue.</p>
+<p><strong>A.</strong> If AWS CloudFormation fails to create the stack, we recommend that you relaunch the template with <strong>Rollback on failure</strong> set to <strong>Disabled</strong>. (This setting is under <strong>Advanced</strong> in the AWS CloudFormation console, <strong>Options</strong> page.) With this setting, the stack’s state is retained and the workload remains running so you can troubleshoot the issue.</p>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -1224,7 +1225,7 @@ If you’re deploying Snyk controller into an existing VPC, make sure that any p
 <i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-When you set <strong>Rollback on failure</strong> to <strong>Disabled</strong>, you continue to incur AWS charges for this stack. Please make sure to delete the stack when you finish troubleshooting.
+When you set <strong>Rollback on failure</strong> to <strong>Disabled</strong>, you continue to incur AWS charges for the stack. Ensure to delete the stack when you finish troubleshooting.
 </td>
 </tr>
 </table>
@@ -1235,13 +1236,13 @@ When you set <strong>Rollback on failure</strong> to <strong>Disabled</strong>, 
 <h2 id="_troubleshooting">Troubleshooting</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>For general EKS troubleshooting steps see the <a href="https://aws-quickstart.github.io/quickstart-amazon-eks/">EKS Quick Start documentation</a>.</p>
+<p>For general EKS troubleshooting steps, see <a href="https://aws-quickstart.github.io/quickstart-amazon-eks/" target="_blank" rel="noopener">Amazon EKS on the AWS Cloud</a>.</p>
 </div>
 <div class="paragraph">
-<p>For Snyk specific troubleshooting see <a href="https://support.snyk.io/hc/en-us/articles/360003916138-Kubernetes-integration-overview">Snyk troubleshooting documentation</a>.</p>
+<p>For Snyk-specific troubleshooting, see the <a href="https://support.snyk.io/hc/en-us/articles/360003916138-Kubernetes-integration-overview" target="_blank" rel="noopener">Kubernetes integration overview</a>.</p>
 </div>
 <div class="paragraph">
-<p>For additional information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html" target="_blank" rel="noopener">Troubleshooting AWS CloudFormation</a> on the AWS website.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html" target="_blank" rel="noopener">Troubleshooting AWS CloudFormation</a>.</p>
 </div>
 </div>
 </div>
@@ -1249,15 +1250,15 @@ When you set <strong>Rollback on failure</strong> to <strong>Disabled</strong>, 
 <h2 id="_parameter_reference">Parameter reference</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_deploy_into_a_new_vpc_and_new_eks_cluster">Deploy into a new VPC and new EKS cluster</h3>
+<h3 id="_deploy_into_a_new_vpc_and_new_amazon_eks_cluster">Deploy into a new VPC and new Amazon EKS cluster</h3>
 <div class="paragraph">
-<p>The full list of parameters for this entrypoint are documented in the <a href="https://aws-quickstart.github.io/quickstart-amazon-eks/#_launch_into_a_new_vpc">EKS Quick Start documentation</a>.</p>
+<p>The full list of parameters for this entrypoint are documented in <a href="https://aws-quickstart.github.io/quickstart-amazon-eks/#_launch_into_a_new_vpc" target="_blank" rel="noopener">Amazon EKS on the AWS Cloud</a>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_deploy_into_a_new_eks_cluster_in_an_existing_vpc">Deploy into a new EKS cluster in an existing VPC</h3>
+<h3 id="_deploy_into_a_new_amazon_eks_cluster_in_an_existing_vpc">Deploy into a new Amazon EKS cluster in an existing VPC</h3>
 <div class="paragraph">
-<p>The full list of parameters for this entrypoint are documented in the <a href="https://aws-quickstart.github.io/quickstart-amazon-eks/#_launch_into_an_existing_vpc">EKS Quick Start documentation</a>.</p>
+<p>The full list of parameters for this entrypoint are documented in <a href="https://aws-quickstart.github.io/quickstart-amazon-eks/#_launch_into_an_existing_vpc" target="_blank" rel="noopener">Amazon EKS on the AWS Cloud</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1281,19 +1282,19 @@ When you set <strong>Rollback on failure</strong> to <strong>Disabled</strong>, 
 <td class="tableblock halign-left valign-top"><p class="tableblock">EKS cluster name
 (<code>KubeClusterName</code>)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong><em>Requires input</em></strong></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the EKS cluster to deploy snyk into.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the EKS cluster to deploy Snyk into.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Snyk integration ID
 (<code>SnykIntegrationId</code>)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong><em>Requires input</em></strong></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Snyk kubernetes integration ID. Must be obtained from the Snyk console. For more information see <a href="https://support.snyk.io/hc/en-us/articles/360003916158-Install-the-Snyk-controller-with-Helm" class="bare">https://support.snyk.io/hc/en-us/articles/360003916158-Install-the-Snyk-controller-with-Helm</a> .</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Snyk Kubernetes integration ID. This must be obtained from the Snyk console. For more information, see <a href="https://support.snyk.io/hc/en-us/articles/360003916158-Install-the-Snyk-controller-with-Helm" class="bare">https://support.snyk.io/hc/en-us/articles/360003916158-Install-the-Snyk-controller-with-Helm</a> .</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Namespace
 (<code>Namespace</code>)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>snyk-monitor</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[Optional] Kubernetes namespace to deploy the Snyk controller into.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(Optional) Kubernetes namespace to deploy the Snyk controller into.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1304,7 +1305,7 @@ When you set <strong>Rollback on failure</strong> to <strong>Disabled</strong>, 
 <h2 id="_send_us_feedback">Send us feedback</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>To post feedback, submit feature ideas, or report bugs, use the <strong>Issues</strong> section of the <a href="https://github.com/aws-quickstart/quickstart-eks-snyk" target="_blank" rel="noopener">GitHub repository</a> for this Quick Start. If you’d like to submit code, please review the <a href="https://aws-quickstart.github.io/" target="_blank" rel="noopener">Quick Start Contributor’s Guide</a>.</p>
+<p>To post feedback, submit feature ideas, or report bugs, use the <strong>Issues</strong> section of the <a href="https://github.com/aws-quickstart/quickstart-eks-snyk" target="_blank" rel="noopener">GitHub repository</a> for this Quick Start. If you want to submit code, review the <a href="https://aws-quickstart.github.io/" target="_blank" rel="noopener">Quick Start Contributor’s Guide</a>.</p>
 </div>
 </div>
 </div>
@@ -1312,7 +1313,7 @@ When you set <strong>Rollback on failure</strong> to <strong>Disabled</strong>, 
 <h2 id="_quick_start_reference_deployments">Quick Start reference deployments</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>See the <a href="https://aws.amazon.com/quickstart/">AWS Quick Start home page</a>.</p>
+<p>See the <a href="https://aws.amazon.com/quickstart/" target="_blank" rel="noopener">AWS Quick Start home page</a>.</p>
 </div>
 </div>
 </div>
@@ -1320,9 +1321,9 @@ When you set <strong>Rollback on failure</strong> to <strong>Disabled</strong>, 
 <h2 id="_github_repository">GitHub repository</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You can visit our <a href="https://github.com/aws-quickstart/quickstart-eks-snyk" target="_blank" rel="noopener">GitHub repository</a> to download
-the templates and scripts for this Quick Start, to post your comments,
-and to share your customizations with others.</p>
+<p>See the <a href="https://github.com/aws-quickstart/quickstart-eks-snyk" target="_blank" rel="noopener">GitHub repository</a> to download
+the templates and scripts for this Quick Start, post comments,
+and share customizations with others.</p>
 </div>
 <hr>
 </div>
