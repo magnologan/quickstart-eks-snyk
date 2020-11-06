@@ -37,11 +37,11 @@ Resources:
     Properties:
       ClusterName: !Ref KubeClusterName
       Namespace: default
-      Manifest: |
+      Manifest: !Sub |
         kind: Namespace
         apiVersion: v1
         metadata:
-          name: !Ref Namespace
+          name: ${Namespace}
   SnykSecret:
     Type: "AWSQS::Kubernetes::Resource"
     DependsOn: SnykNamespace
