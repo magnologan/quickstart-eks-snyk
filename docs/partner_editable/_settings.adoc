@@ -3,7 +3,7 @@
 :custom_title:
 :partner-product-short-name: Snyk controller
 :partner-company-name: Snyk
-:doc-month: October
+:doc-month: November
 :doc-year: 2020
 :partner-contributors: Jay Yeras, {partner-company-name}
 :quickstart-contributors: Jay McConnell, AWS Quick Start team
