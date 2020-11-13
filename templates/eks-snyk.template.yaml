@@ -2,7 +2,7 @@ AWSTemplateFormatVersion: "2010-09-09"
 Description: "Deploys the snyk-monitor helm chart into an existing kubernetes cluster (qs-1qqod7mii)"
 Metadata:
   QuickStartDocumentation:
-    EntrypointName: "Launch into an existing EKS cluster"
+    EntrypointName: "Deploy into an existing EKS cluster"
   AWS::CloudFormation::Interface:
     ParameterGroups:
       - Label:
@@ -26,7 +26,7 @@ Parameters:
     Type: String
     AllowedPattern: '[a-z0-9-]{36}'
     MinLength: 36
-    Description: 'Snyk Kubernetes integration ID. This must be obtained from the Snyk console. For more information, see https://support.snyk.io/hc/en-us/articles/360003916158-Install-the-Snyk-controller-with-Helm .'
+    Description: 'Snyk Kubernetes integration ID. This must be obtained from the Snyk console. For more information, see https://support.snyk.io/hc/en-us/articles/360003916158-Install-the-Snyk-controller-with-Helm.'
   Namespace:
     Type: String
     Default: snyk-monitor
