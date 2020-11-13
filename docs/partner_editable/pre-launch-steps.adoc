@@ -1,4 +1,4 @@
-=== Retrieve Snyk Kubernetes integration ID
+=== Retrieve a Snyk Kubernetes integration ID
 . Log in to your Snyk account, and navigate to *Integrations*.
-. Find *Kubernetes*, and choose it.
-. Choose *Connect* from the page, and copy the Snyk Integration ID. The Integration ID is a UUID with a format that's similar to the following: abcd1234-abcd-1234-abcd-1234abcd1234. Save the UUID for the next step.
+. Search for *Kubernetes*, and then choose it.
+. Choose *Connect*, and copy the Snyk Integration ID. The Integration ID is a UUID with a format that's similar to the following: _abcd1234-abcd-1234-abcd-1234abcd1234_. Save the UUID for the next step.
