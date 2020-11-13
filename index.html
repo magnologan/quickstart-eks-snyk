@@ -805,7 +805,7 @@ p.footer-text a{color:#d7d8d8}
 <ul class="sectlevel2">
 <li><a href="#_sign_in_to_your_aws_account">Sign in to your AWS account</a></li>
 <li><a href="#_prepare_existing_eks_cluster">Prepare existing EKS cluster</a></li>
-<li><a href="#_retrieve_snyk_kubernetes_integration_id">Retrieve Snyk Kubernetes integration ID</a></li>
+<li><a href="#_retrieve_a_snyk_kubernetes_integration_id">Retrieve a Snyk Kubernetes integration ID</a></li>
 <li><a href="#_launch_the_quick_start">Launch the Quick Start</a></li>
 </ul>
 </li>
@@ -839,7 +839,7 @@ p.footer-text a{color:#d7d8d8}
 </div>
 </div>
 <div class="paragraph text-center">
-<p><strong>October 2020</strong><br>
+<p><strong>November 2020</strong><br>
 <em>Jay Yeras, Snyk</em><br>
 <em>Jay McConnell, AWS Quick Start team</em></p>
 </div>
@@ -865,7 +865,7 @@ report bugs, or submit feature ideas for this Quick Start.
 <h2 id="_overview">Overview</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Snyk controller for Amazon Elastic Kubernetes Service (Amazon EKS) lets you import and test your running EKS workloads to identify vulnerabilities in associated images and configurations that might make workloads less secure. As new images are deployed and workload configurations change, Snyk continually monitors workloads to identify security issues.</p>
+<p>Snyk controller for Amazon Elastic Kubernetes Service (Amazon EKS) lets you import and test your running EKS workloads to identify vulnerabilities in associated images and configurations that might make workloads less secure. As new images deploy and workload configurations change, Snyk continually monitors workloads to identify security issues.</p>
 </div>
 <div class="paragraph">
 <p>This Quick Start is for developers, DevOps, security teams, and roles within an organization for building, deploying, and maintaining Amazon EKS applications.</p>
@@ -913,7 +913,7 @@ Amazon may share user-deployment information with the AWS Partner that collabora
 <p>A Kubernetes namespace for Snyk.</p>
 </li>
 <li>
-<p>A Kubernetes secret that contains a Snyk Integration ID and docker config JSON file.</p>
+<p>A Kubernetes secret that contains a Snyk integration ID and Docker configuration file.</p>
 </li>
 <li>
 <p>A Snyk monitor pod.</p>
@@ -1061,17 +1061,17 @@ Region</code>, and <code>Quick Start S3 key prefix</code>. Changing these parame
 </div>
 </div>
 <div class="sect2">
-<h3 id="_retrieve_snyk_kubernetes_integration_id">Retrieve Snyk Kubernetes integration ID</h3>
+<h3 id="_retrieve_a_snyk_kubernetes_integration_id">Retrieve a Snyk Kubernetes integration ID</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>Log in to your Snyk account, and navigate to <strong>Integrations</strong>.</p>
 </li>
 <li>
-<p>Find <strong>Kubernetes</strong>, and choose it.</p>
+<p>Search for <strong>Kubernetes</strong>, and then choose it.</p>
 </li>
 <li>
-<p>Choose <strong>Connect</strong> from the page, and copy the Snyk Integration ID. The Integration ID is a UUID with a format that&#8217;s similar to the following: abcd1234-abcd-1234-abcd-1234abcd1234. Save the UUID for the next step.</p>
+<p>Choose <strong>Connect</strong>, and copy the Snyk Integration ID. The Integration ID is a UUID with a format that&#8217;s similar to the following: <em>abcd1234-abcd-1234-abcd-1234abcd1234</em>. Save the UUID for the next step.</p>
 </li>
 </ol>
 </div>
@@ -1178,13 +1178,13 @@ is provided in the <a href="#_parameter_reference">Parameter reference</a> secti
 <p>Configure the <code>kubectll</code> command line utility to connect to your EKS cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managing-auth.html" target="_blank" rel="noopener">Cluster authentication</a>.</p>
 </li>
 <li>
-<p>Run <code>kubectl</code> to get namespaces, and verify that <strong>snyk-monitor</strong> namespace has a status of <strong>Active</strong>.</p>
+<p>Run <code>kubectl</code> to get namespaces, and verify that the <strong>snyk-monitor</strong> namespace has an <strong>Active</strong> status.</p>
 </li>
 <li>
-<p>Run <code>kubectl get pods --namespace snyk-monitor</code>, and verify that a pod with the <strong>snyk-monitor</strong> prefix has a status of <strong>Running</strong>.</p>
+<p>Run <code>kubectl get pods --namespace snyk-monitor</code>, and verify that a pod with the <strong>snyk-monitor</strong> prefix has a <strong>Running</strong> status.</p>
 </li>
 <li>
-<p>From the Snyk console, verify that your cluster appears and that you can add workloads. For more information, see <a href="https://support.snyk.io/hc/en-us/articles/360003947117#UUID-a0526554-0943-3363-6977-7a11f766ede2" target="_blank" rel="noopener">Adding Kubernetes workloads for security scanning</a>.</p>
+<p>From the Snyk console, verify that your cluster appears and you can add workloads. For more information, see <a href="https://support.snyk.io/hc/en-us/articles/360003947117#UUID-a0526554-0943-3363-6977-7a11f766ede2" target="_blank" rel="noopener">Adding Kubernetes workloads for security scanning</a>.</p>
 </li>
 </ol>
 </div>
@@ -1194,7 +1194,7 @@ is provided in the <a href="#_parameter_reference">Parameter reference</a> secti
 <h2 id="_best_practices_for_using_snyk_controller_on_eks">Best practices for using Snyk controller on EKS</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The Snyk Kubernetes integration monitors workloads and provides details about potential vulnerabilities in container images as well as security configuration for your deployments. We recommended that your Kubernetes manifests adhere to the workload configuration properties. For more information, see <a href="https://support.snyk.io/hc/en-us/articles/360003916178-Viewing-project-details-and-test-results" target="_blank" rel="noopener">Viewing project details and test results</a>.</p>
+<p>The Snyk controller monitors workloads and provides details about potential vulnerabilities in container images in addition to the security configuration for your deployments. We recommend that your Kubernetes manifests adhere to the workload configuration properties. For more information, see <a href="https://support.snyk.io/hc/en-us/articles/360003916178-Viewing-project-details-and-test-results" target="_blank" rel="noopener">Viewing project details and test results</a>.</p>
 </div>
 </div>
 </div>
@@ -1202,10 +1202,10 @@ is provided in the <a href="#_parameter_reference">Parameter reference</a> secti
 <h2 id="_security">Security</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Snyk alerts for common misconfigurations include not setting CPU or memory limits for your application as well as running containers as the root user. Another common misconfiguration is leaving the mounted default file system for the container as writable. This may expose you to attackers who compromise the container by writing to the disk. If your containers are stateless, you don’t need a writable file system.</p>
+<p>Snyk provides alerts for common misconfigurations. Examples of this include running containers as the root user, not setting application limits for your CPU or memory, and using a writable mounted file system, which allows attackers to compromise your containers by writing to the disk. If your containers are stateless, you don’t need a writable file system.</p>
 </div>
 <div class="paragraph">
-<p>Also, ensure to define capabilities. At a low level, Linux capabilities control what processes in the container can do, from writing to the disk to communicating over the network.</p>
+<p>At a low level, Linux controls what processes are allowed within your containers, from writing to the disk to communicating over the network. For this reason, ensure that your system&#8217;s capabilities are defined.</p>
 </div>
 </div>
 </div>
@@ -1242,7 +1242,7 @@ When you set <strong>Rollback on failure</strong> to <strong>Disabled</strong>, 
 <p>For Snyk-specific troubleshooting, see the <a href="https://support.snyk.io/hc/en-us/articles/360003916138-Kubernetes-integration-overview" target="_blank" rel="noopener">Kubernetes integration overview</a>.</p>
 </div>
 <div class="paragraph">
-<p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html" target="_blank" rel="noopener">Troubleshooting AWS CloudFormation</a>.</p>
+<p>For troubleshooting AWS CloudFormation stacks, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html" target="_blank" rel="noopener">Troubleshooting AWS CloudFormation</a>.</p>
 </div>
 </div>
 </div>
