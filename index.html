@@ -803,8 +803,7 @@ p.footer-text a{color:#d7d8d8}
 </li>
 <li><a href="#_deployment_steps">Deployment steps</a>
 <ul class="sectlevel2">
-<li><a href="#_sign_in_to_your_aws_account">Sign in to your AWS account</a></li>
-<li><a href="#_prepare_existing_eks_cluster">Prepare existing EKS cluster</a></li>
+<li><a href="#_prepare_an_existing_eks_cluster">Prepare an existing EKS cluster</a></li>
 <li><a href="#_retrieve_a_snyk_kubernetes_integration_id">Retrieve a Snyk Kubernetes integration ID</a></li>
 <li><a href="#_launch_the_quick_start">Launch the Quick Start</a></li>
 </ul>
@@ -896,7 +895,7 @@ Amazon may share user-deployment information with the AWS Partner that collabora
 <h2 id="_architecture">Architecture</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Deploying this Quick Start with default parameters into an existing Amazon EKS cluster builds the following environment. For a diagram of the new VPC and Amazon EKS cluster, see the <a href="https://aws-quickstart.github.io/quickstart-amazon-eks/" target="_blank" rel="noopener">Amazon EKS on the AWS Cloud</a>.</p>
+<p>Deploying this Quick Start with default parameters into an existing Amazon EKS cluster builds the following environment. For a diagram of the new virtual private cloud (VPC) and Amazon EKS cluster, see <a href="https://aws-quickstart.github.io/quickstart-amazon-eks/" target="_blank" rel="noopener">Amazon EKS on the AWS Cloud</a>.</p>
 </div>
 <div id="architecture1" class="imageblock">
 <div class="content">
@@ -905,7 +904,7 @@ Amazon may share user-deployment information with the AWS Partner that collabora
 <div class="title">Figure 1. Quick Start architecture for <em>Snyk Controller for Amazon EKS</em></div>
 </div>
 <div class="paragraph">
-<p>As shown in figure 1, the Quick Start sets up the following:</p>
+<p>As shown in Figure 1, the Quick Start sets up the following:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -955,7 +954,7 @@ deploy, and operate your infrastructure and applications on the AWS Cloud.</p>
 <div class="sect2">
 <h3 id="_iam_permissions">IAM permissions</h3>
 <div class="paragraph">
-<p>Before launching the Quick Start, you must log in to the AWS Management Console with <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_job-functions.html" target="_blank" rel="noopener">IAM permissions</a> for the resources and actions the templates deploy.</p>
+<p>Before launching the Quick Start, you must log in to the AWS Management Console with <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_job-functions.html" target="_blank" rel="noopener">AWS Identity and Access Management (IAM)</a> permissions for the resources and actions that each template deploys.</p>
 </div>
 <div class="paragraph">
 <p>The <em>AdministratorAccess</em> managed policy within IAM provides sufficient permissions, although your organization may choose to use a custom policy with more restrictions.</p>
@@ -986,20 +985,7 @@ deploy, and operate your infrastructure and applications on the AWS Cloud.</p>
 <h2 id="_deployment_steps">Deployment steps</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_sign_in_to_your_aws_account">Sign in to your AWS account</h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Sign in to your AWS account at <a href="https://aws.amazon.com" class="bare">https://aws.amazon.com</a> with an IAM user role that has the necessary permissions. For details, see <a href="#_planning_the_deployment">Planning the deployment</a>, earlier in this guide.</p>
-</li>
-<li>
-<p>Ensure that your AWS account is configured correctly, as discussed in the <a href="#_technical_requirements">Technical requirements</a> section.</p>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_prepare_existing_eks_cluster">Prepare existing EKS cluster</h3>
+<h3 id="_prepare_an_existing_eks_cluster">Prepare an existing EKS cluster</h3>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -1015,16 +1001,19 @@ This step is only required if you launch this Quick Start into an existing Amazo
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Sign in to your AWS account, and launch the <a href="https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/create/template?stackName=Amazon-EKS&amp;templateURL=https://aws-quickstart.s3.us-east-1.amazonaws.com/quickstart-amazon-eks/templates/amazon-eks-entrypoint-existing-cluster.template.yaml">cluster preparation template</a>.</p>
+<p>Sign in to your AWS account at <a href="https://aws.amazon.com" class="bare">https://aws.amazon.com</a> with an IAM user role that has the necessary permissions. For details, see <a href="#_planning_the_deployment">Planning the deployment</a>, earlier in this guide.</p>
 </li>
 <li>
-<p>The template launches in the US East (Ohio) Region by default. To change the Region, choose another Region from list in the upper-right corner of the navigation bar.</p>
+<p>Launch the <a href="https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/create/template?stackName=Amazon-EKS&amp;templateURL=https://aws-quickstart.s3.us-east-1.amazonaws.com/quickstart-amazon-eks/templates/amazon-eks-entrypoint-existing-cluster.template.yaml">cluster preparation template</a>.</p>
+</li>
+<li>
+<p>The template launches in the US East (Ohio) Region by default. To change the Region, choose another Region from the list in the upper-right corner of the navigation bar.</p>
 </li>
 <li>
 <p>On the <strong>Create stack</strong> page, keep the default setting for the template URL, and then choose <strong>Next</strong>.</p>
 </li>
 <li>
-<p>On the <strong>Specify stack details</strong> page, change the stack name if needed. Enter the name of the Amazon EKS cluster you want to deploy to as well as the subnet IDs and security group ID associated with the cluster. These can be obtained from the EKS cluster console.</p>
+<p>On the <strong>Specify stack details</strong> page, change the stack name if needed. Enter the name of the Amazon EKS cluster you want to deploy to in addition to the subnet IDs and security group ID associated with the cluster. These can be obtained from the EKS cluster console.</p>
 </li>
 <li>
 <p>On the <strong>Options</strong> page, specify the key-value pairs for resources in your stack, and set advanced options. When you’re done, choose <strong>Next</strong>.</p>
@@ -1117,7 +1106,7 @@ You are responsible for the cost of the AWS services used while running this Qui
 </tbody>
 </table>
 <div class="paragraph">
-<p>New cluster deployments take about 90 minutes to complete. Existing-cluster deployments take about 10 minutes to complete.</p>
+<p>New clusters take about 1.5 hours to deploy. Existing clusters take about {deployment_time} to deploy.</p>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -1156,7 +1145,7 @@ is provided in the <a href="#_parameter_reference">Parameter reference</a> secti
 <p>Monitor the status of the stack. When the status is <strong>CREATE_COMPLETE</strong>, the Snyk controller deployment is ready.</p>
 </li>
 <li>
-<p>Use the values displayed in the <strong>Outputs</strong> tab for the stack, as shown in <a href="#cfn_outputs">Snyk controller outputs after successful deployment</a>, to view the created resources.</p>
+<p>Use the values displayed in the <strong>Outputs</strong> tab for the stack, as shown in the following figure.</p>
 </li>
 </ol>
 </div>
