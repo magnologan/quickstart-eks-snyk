@@ -11,6 +11,7 @@
 :eks_addin:
 :disable_regions:
 :parameters_as_appendix:
+:deployment_time: 5 minutes
 // Uncomment these two attributes if you are leveraging
 // - an AWS Marketplace listing.
 // Additional content will be auto-generated based on these attributes.
